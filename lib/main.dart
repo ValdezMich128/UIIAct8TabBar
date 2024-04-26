@@ -1,43 +1,70 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+import 'package:valdez/pantallainicial.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+import 'package:valdez/pantalla1.dart';
+
+void main() => runApp(MiApp());
+
+class MiApp extends StatelessWidget {
+  const MiApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      initialRoute: "/",
+      routes: {
+        "/": (context) => Pantallainicial(),
+        "/pantalla1": (context) => Pantalla1(),
+      }, //Fin rutas de páginas
     );
-  }
+  } //Fin de Widgets
 }
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
+/*import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MyApp());
+}
+
+class  extends StatelessWidget {
+  const ({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "SadBoyz Valdez0422",
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+
       ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Botones de Flutter"),
+
+        ),
+        body: Container(
+          alignment: Alignment.center,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  print("Boton presionado");
+                },
+                child: Text("Boton")),
+                OutlineButton(onPressed: (){
+                  print("Boton Marcado presionado");
+                }, child: Text("Boton Marcado"))
+              
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
+class OutlineButton {
+}*/
